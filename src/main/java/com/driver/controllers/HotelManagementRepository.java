@@ -22,7 +22,7 @@ public class HotelManagementRepository {
         if (hotelMap.containsKey(hotel.getHotelName()))return "FAILURE";
         String hotelName = hotel.getHotelName();
         hotelMap.put(hotelName, hotel);
-        return "Success";
+        return "SUCCESS";
     }
 
     public Integer addUser(User user) {
