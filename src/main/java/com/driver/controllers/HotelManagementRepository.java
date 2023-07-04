@@ -18,13 +18,17 @@ public class HotelManagementRepository {
 
 
     public String addHotel(Hotel hotel) {
-        hotelMap.put(hotel.getHotelName(),hotel);
-        return "Hotel added successfully";
+        if (hotel.getHotelName() == null)return "FAILURE";
+        if (hotelMap.containsKey(hotel.getHotelName()))return "FAILURE";
+        String hotelName = hotel.getHotelName();
+        hotelMap.put(hotelName, hotel);
+        return "Success";
     }
 
     public Integer addUser(User user) {
-        userMap.put(user.getaadharCardNo(),user);
-        return user.getaadharCardNo();
+        int adharNum = user.getaadharCardNo();
+        userMap.put(adharNum, user);
+        return adharNum;
     }
 
     public String getHotelWithMostFacilities() {
